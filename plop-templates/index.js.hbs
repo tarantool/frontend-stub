@@ -1,8 +1,13 @@
 import * as React from 'react';
+import { PageLayout, Text } from '@tarantool.io/ui-kit';
 
 const projectName = '{{name}}';
 
-const Root = () => <div>{projectName}</div>
+const Root = () => (
+  <PageLayout heading={projectName}>
+    <Text>{`${projectName} content`}</Text>
+  </PageLayout>
+);
 
 window.tarantool_enterprise_core.register(
   projectName,
@@ -15,3 +20,5 @@ window.tarantool_enterprise_core.register(
   Root,
   'react'
 );
+
+window.tarantool_enterprise_core.install();
